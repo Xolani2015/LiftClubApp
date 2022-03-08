@@ -31,15 +31,34 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //     image: AssetImage('assets/splash.jpg'), fit: BoxFit.cover),
-          ),
-      child: const Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
-        ),
-      ),
+      color: Color.fromARGB(255, 255, 239, 15),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 300,
+                  width: 300,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/taxilogo.png'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text('Better Travelling')
+              ],
+            )
+          ]),
     );
   }
 }
