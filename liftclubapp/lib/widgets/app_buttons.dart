@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   String buttonText;
-  AppButton({Key? key, required this.buttonText}) : super(key: key);
+  VoidCallback onPressed;
+  AppButton({Key? key, required this.buttonText, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class AppButton extends StatelessWidget {
             ),
             padding: MaterialStateProperty.all(const EdgeInsets.only(
                 left: 50, right: 50, top: 15, bottom: 15))),
-        onPressed: () => {},
+        onPressed: onPressed,
         child: Text(
           buttonText,
           style: TextStyle(color: Colors.black),

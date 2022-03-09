@@ -56,8 +56,18 @@ class LandingScreenState extends State<LandingScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                AppButton(buttonText: 'Login'),
-                AppButton(buttonText: 'Sign up')
+                AppButton(
+                  buttonText: 'Login',
+                  onPressed: () => {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginScreen())),
+                    print('Lets go to the login page')
+                  },
+                ),
+                AppButton(
+                  buttonText: 'Sign up',
+                  onPressed: () => {},
+                )
               ],
             )
           ]),
