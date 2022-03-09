@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:liftclubapp/login_screen.dart';
+import 'package:liftclubapp/widgets/app_buttons.dart';
 
 class LandingScreen extends StatefulWidget {
   @override
@@ -15,6 +17,51 @@ class LandingScreenState extends State<LandingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Landing screen');
+    return Container(
+      color: Color.fromARGB(255, 255, 255, 255),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Better Travelling',
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 300,
+                  width: 300,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/Taxilogo2.png'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              children: const [
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                AppButton(buttonText: 'Login'),
+                AppButton(buttonText: 'Sign up')
+              ],
+            )
+          ]),
+    );
+    ;
   }
 }

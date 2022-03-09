@@ -1,41 +1,36 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:liftclubapp/landing_screen.dart';
-import 'package:liftclubapp/main.dart';
+import 'package:liftclubapp/widgets/app_buttons.dart';
 
-class SplashScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return SplashScreenState();
+    return LoginScreenState();
   }
 }
 
-class SplashScreenState extends State<SplashScreen> {
+class LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-
-    loadData();
-  }
-
-  Future<Timer> loadData() async {
-    return new Timer(Duration(seconds: 5), onDoneLoading);
-  }
-
-  onDoneLoading() async {
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LandingScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 255, 239, 15),
+      color: Color.fromARGB(255, 255, 255, 255),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Better Travelling',
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                )
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -44,21 +39,29 @@ class SplashScreenState extends State<SplashScreen> {
                   width: 300,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/taxilogo.png'),
+                      image: AssetImage('assets/images/Taxilogo2.png'),
                     ),
                   ),
                 ),
               ],
             ),
             Column(
-              children: [
+              children: const [
                 SizedBox(
                   height: 20,
                 ),
-                Text('Better Travelling')
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                AppButton(
+                  buttonText: 'Login',
+                ),
               ],
             )
           ]),
     );
+    ;
   }
 }
