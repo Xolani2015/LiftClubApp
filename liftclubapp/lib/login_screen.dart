@@ -116,7 +116,28 @@ class LoginScreenState extends State<LoginScreen> {
             height: 30,
           ),
           AppButton(
-              buttonText: 'Login', isLongButton: true, onPressed: () => {})
+              buttonText: 'Login', isLongButton: true, onPressed: () => {}),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            'Forgot Password ?',
+            style: TextStyle(color: Colors.blue),
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [const Text('version 1.0')],
+              )
+            ],
+          ),
         ]),
       ),
     );
