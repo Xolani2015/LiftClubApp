@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
+  bool isSwitched = false;
   @override
   void initState() {
     super.initState();
@@ -94,6 +95,28 @@ class LoginScreenState extends State<LoginScreen> {
               autofocus: false,
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Switch(
+                  activeColor: Colors.black,
+                  value: isSwitched,
+                  onChanged: (val) => {
+                        setState((() {
+                          isSwitched = val;
+                        }))
+                      }),
+              const Text("Remember me ?")
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          AppButton(
+              buttonText: 'Login', isLongButton: true, onPressed: () => {})
         ]),
       ),
     );

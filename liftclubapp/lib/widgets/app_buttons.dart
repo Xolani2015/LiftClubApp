@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   String buttonText;
+  bool isLongButton;
   VoidCallback onPressed;
-  AppButton({Key? key, required this.buttonText, required this.onPressed})
+  AppButton(
+      {Key? key,
+      required this.buttonText,
+      this.isLongButton = false,
+      required this.onPressed})
       : super(key: key);
 
   @override
@@ -16,8 +21,11 @@ class AppButton extends StatelessWidget {
                 return Colors.yellow; // Use the component's default.
               },
             ),
-            padding: MaterialStateProperty.all(const EdgeInsets.only(
-                left: 50, right: 50, top: 15, bottom: 15))),
+            padding: isLongButton == false
+                ? MaterialStateProperty.all(const EdgeInsets.only(
+                    left: 50, right: 50, top: 15, bottom: 15))
+                : MaterialStateProperty.all(const EdgeInsets.only(
+                    left: 140, right: 140, top: 15, bottom: 15))),
         onPressed: onPressed,
         child: Text(
           buttonText,
